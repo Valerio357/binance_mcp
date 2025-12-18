@@ -6,6 +6,7 @@
   "description": "Binance Spot REST MCP server (market data + account + trading tools).",
   "scripts": {
     "dev": "tsx watch src/index.ts",
+    "prestart": "npm run build",
     "start": "node dist/index.js",
     "build": "tsc -p tsconfig.json"
   },
