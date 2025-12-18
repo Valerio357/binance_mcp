@@ -1,3 +1,4 @@
+import "./polyfills.js";
 import { FastMCP } from "fastmcp";
 import { tool_market_price, tool_market_klines, tool_exchange_info } from "./tools/market.js";
 import { tool_account_balances, tool_open_orders } from "./tools/account.js";
