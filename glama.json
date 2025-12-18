@@ -1,0 +1,31 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "name": "binance-mcp",
+  "version": "0.1.0",
+  "description": "Binance Spot REST MCP server exposing market, account, and trading tools.",
+  "homepage": "https://glama.ai/mcp",
+  "repository": "https://github.com/valerio/binance-mcp",
+  "maintainers": ["valerio"],
+  "tags": ["binance", "crypto", "spot", "trading"],
+  "entry": {
+    "transport": "stdio",
+    "command": "node dist/index.js",
+    "build": "npm install && npm run build"
+  },
+  "env": [
+    { "key": "BINANCE_API_KEY", "required": true, "description": "Binance API key" },
+    { "key": "BINANCE_API_SECRET", "required": true, "description": "Binance API secret" },
+    { "key": "BINANCE_BASE_URL", "default": "https://api.binance.com", "description": "Binance REST base URL" },
+    { "key": "BINANCE_RECV_WINDOW", "default": "5000", "description": "recvWindow ms" },
+    { "key": "BINANCE_TRADE_ENABLED", "default": "true", "description": "Set to false to disable trading tools" }
+  ],
+  "tools": [
+    "binance.market.price",
+    "binance.market.klines",
+    "binance.market.exchangeInfo",
+    "binance.account.balances",
+    "binance.account.openOrders",
+    "binance.trade.placeOrder",
+    "binance.trade.cancelOrder"
+  ]
+}

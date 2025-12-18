@@ -1,0 +1,23 @@
+name: binance-mcp
+schemaVersion: 1
+build:
+  command: npm install && npm run build
+start:
+  command: node dist/index.js
+  transport: stdio
+env:
+  - key: BINANCE_API_KEY
+    required: true
+    description: Binance API key
+  - key: BINANCE_API_SECRET
+    required: true
+    description: Binance API secret
+  - key: BINANCE_BASE_URL
+    default: "https://api.binance.com"
+    description: Binance REST base URL
+  - key: BINANCE_RECV_WINDOW
+    default: "5000"
+    description: Binance recvWindow param (ms)
+  - key: BINANCE_TRADE_ENABLED
+    default: "true"
+    description: Toggle trading tools (set to false to disable)
