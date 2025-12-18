@@ -21,12 +21,12 @@
     { "key": "BINANCE_TRADE_ENABLED", "default": "true", "description": "Set to false to disable trading tools" }
   ],
   "tools": [
-    "binance.market.price",
-    "binance.market.klines",
-    "binance.market.exchangeInfo",
-    "binance.account.balances",
-    "binance.account.openOrders",
-    "binance.trade.placeOrder",
-    "binance.trade.cancelOrder"
+    "binance_market_price",
+    "binance_market_klines",
+    "binance_market_exchangeInfo",
+    "binance_account_balances",
+    "binance_account_openOrders",
+    "binance_trade_placeOrder",
+    "binance_trade_cancelOrder"
   ]
 }

@@ -19,7 +19,7 @@ const cancelOrderSchema = z.object({
 });
 
 export const tool_place_order: BinanceTool = {
-  name: "binance.trade.placeOrder",
+  name: "binance_trade_placeOrder",
   description:
     "Place a spot order. Example: {symbol:'BTCUSDT', side:'BUY', type:'MARKET', quoteOrderQty:'50'}",
   parameters: placeOrderSchema,
@@ -52,7 +52,7 @@ export const tool_place_order: BinanceTool = {
 };
 
 export const tool_cancel_order: BinanceTool = {
-  name: "binance.trade.cancelOrder",
+  name: "binance_trade_cancelOrder",
   description: "Cancel a spot order by symbol and orderId.",
   parameters: cancelOrderSchema,
   async run(input) {

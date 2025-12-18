@@ -12,7 +12,7 @@ const klinesSchema = z.object({
 const exchangeInfoSchema = z.object({});
 
 export const tool_market_price: BinanceTool = {
-  name: "binance.market.price",
+  name: "binance_market_price",
   description: "Get the latest price for a symbol (e.g. BTCUSDT).",
   parameters: priceSchema,
   async run(input) {
@@ -27,7 +27,7 @@ export const tool_market_price: BinanceTool = {
 };
 
 export const tool_market_klines: BinanceTool = {
-  name: "binance.market.klines",
+  name: "binance_market_klines",
   description: "Get historical klines/candles for a symbol and interval.",
   parameters: klinesSchema,
   async run(input) {
@@ -42,7 +42,7 @@ export const tool_market_klines: BinanceTool = {
 };
 
 export const tool_exchange_info: BinanceTool = {
-  name: "binance.market.exchangeInfo",
+  name: "binance_market_exchangeInfo",
   description: "Get exchange information including filters per symbol.",
   parameters: exchangeInfoSchema,
   async run() {

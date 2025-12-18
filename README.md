@@ -51,13 +51,13 @@ The provided Dockerfile bakes this configuration automatically.
 
 | name | description |
 | --- | --- |
-| `binance.market.price` | Latest ticker price for a symbol. |
-| `binance.market.klines` | Candles (symbol + interval, configurable limit). |
-| `binance.market.exchangeInfo` | Full exchange metadata + filters. |
-| `binance.account.balances` | Account snapshot (requires API key/secret). |
-| `binance.account.openOrders` | Open orders for a symbol. |
-| `binance.trade.placeOrder` | Places MARKET/LIMIT orders with guardrails. |
-| `binance.trade.cancelOrder` | Cancels an order by symbol + orderId. |
+| `binance_market_price` | Latest ticker price for a symbol. |
+| `binance_market_klines` | Candles (symbol + interval, configurable limit). |
+| `binance_market_exchangeInfo` | Full exchange metadata + filters. |
+| `binance_account_balances` | Account snapshot (requires API key/secret). |
+| `binance_account_openOrders` | Open orders for a symbol. |
+| `binance_trade_placeOrder` | Places MARKET/LIMIT orders with guardrails. |
+| `binance_trade_cancelOrder` | Cancels an order by symbol + orderId. |
 
 All tools return JSON payloads stringified for LLM consumption.
 

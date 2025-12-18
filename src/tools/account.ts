@@ -7,7 +7,7 @@ const balancesSchema = z.object({});
 const openOrdersSchema = z.object({ symbol: z.string().min(1) });
 
 export const tool_account_balances: BinanceTool = {
-  name: "binance.account.balances",
+  name: "binance_account_balances",
   description: "Get account balances (requires API key & secret).",
   parameters: balancesSchema,
   async run(input) {
@@ -22,7 +22,7 @@ export const tool_account_balances: BinanceTool = {
 };
 
 export const tool_open_orders: BinanceTool = {
-  name: "binance.account.openOrders",
+  name: "binance_account_openOrders",
   description: "List open orders for a symbol.",
   parameters: openOrdersSchema,
   async run(input) {
