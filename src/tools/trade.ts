@@ -1,7 +1,6 @@
 import { z } from "zod";
 import { binance, ensureTradingEnabled, withCommonParams } from "../binance/client.js";
 import type { BinanceTool } from "../binance/types.js";
-import { toJsonSchema } from "../util/schema.js";
 import { toToolError } from "../util/errors.js";
 
 const placeOrderSchema = z.object({
@@ -23,7 +22,7 @@ export const tool_place_order: BinanceTool = {
   name: "binance.trade.placeOrder",
   description:
     "Place a spot order. Example: {symbol:'BTCUSDT', side:'BUY', type:'MARKET', quoteOrderQty:'50'}",
-  inputSchema: toJsonSchema(placeOrderSchema),
+  parameters: placeOrderSchema,
   async run(input) {
     ensureTradingEnabled();
     const params = placeOrderSchema.parse(input);
@@ -55,7 +54,7 @@ export const tool_place_order: BinanceTool = {
 export const tool_cancel_order: BinanceTool = {
   name: "binance.trade.cancelOrder",
   description: "Cancel a spot order by symbol and orderId.",
-  inputSchema: toJsonSchema(cancelOrderSchema),
+  parameters: cancelOrderSchema,
   async run(input) {
     ensureTradingEnabled();
     const params = cancelOrderSchema.parse(input);

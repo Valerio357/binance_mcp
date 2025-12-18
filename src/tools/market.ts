@@ -1,7 +1,6 @@
 import { z } from "zod";
 import { binance } from "../binance/client.js";
 import type { BinanceTool } from "../binance/types.js";
-import { toJsonSchema } from "../util/schema.js";
 import { toToolError } from "../util/errors.js";
 
 const priceSchema = z.object({ symbol: z.string().min(1) });
@@ -15,7 +14,7 @@ const exchangeInfoSchema = z.object({});
 export const tool_market_price: BinanceTool = {
   name: "binance.market.price",
   description: "Get the latest price for a symbol (e.g. BTCUSDT).",
-  inputSchema: toJsonSchema(priceSchema),
+  parameters: priceSchema,
   async run(input) {
     const params = priceSchema.parse(input);
     try {
@@ -30,7 +29,7 @@ export const tool_market_price: BinanceTool = {
 export const tool_market_klines: BinanceTool = {
   name: "binance.market.klines",
   description: "Get historical klines/candles for a symbol and interval.",
-  inputSchema: toJsonSchema(klinesSchema),
+  parameters: klinesSchema,
   async run(input) {
     const params = klinesSchema.parse(input);
     try {
@@ -45,7 +44,7 @@ export const tool_market_klines: BinanceTool = {
 export const tool_exchange_info: BinanceTool = {
   name: "binance.market.exchangeInfo",
   description: "Get exchange information including filters per symbol.",
-  inputSchema: toJsonSchema(exchangeInfoSchema),
+  parameters: exchangeInfoSchema,
   async run() {
     try {
       const res = await binance.exchangeInfo();

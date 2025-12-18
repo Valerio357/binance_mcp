@@ -11,10 +11,9 @@
   },
   "dependencies": {
     "@binance/connector": "^3.0.0",
-    "@modelcontextprotocol/sdk": "^1.0.0",
     "dotenv": "^16.4.5",
-    "zod": "^3.23.8",
-    "zod-to-json-schema": "^3.23.5"
+    "fastmcp": "^3.25.4",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "tsx": "^4.19.2",

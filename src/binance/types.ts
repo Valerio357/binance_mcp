@@ -1,8 +1,8 @@
-export type JsonSchema = Record<string, unknown>;
+import { z } from "zod";
 
 export interface BinanceTool {
   name: string;
   description: string;
-  inputSchema: JsonSchema;
+  parameters: z.ZodTypeAny;
   run: (input: unknown) => Promise<unknown>;
 }
